@@ -14,6 +14,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using DevDomMobile.Models;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 
 
 namespace DevDomMobile
@@ -62,7 +63,7 @@ namespace DevDomMobile
 
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Categoria_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
             var listbox = (ListBox)sender;
@@ -73,6 +74,39 @@ namespace DevDomMobile
               NavigationService.Navigate(new Uri("/tutoriales.xaml?catId=" + cat.id, UriKind.Relative));  
             }
             
+        }
+
+        private void Podcast_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listbox = (ListBox)sender;
+            var pod = (podcast)listbox.SelectedItem;
+
+            if (pod != null)
+            {
+                NavigationService.Navigate(new Uri("/podcasts.xaml?podId=" + pod.id, UriKind.Relative));
+            }
+
+        }
+
+        private void Comunidad_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listbox = (ListBox)sender;
+            var com = (comunidad)listbox.SelectedItem;
+
+            if (com != null)
+            {
+                NavigationService.Navigate(new Uri("/comunidades.xaml?comId=" + com.id, UriKind.Relative));
+            }
+        }
+
+        private void Colaboradores_Tap(object sender, GestureEventArgs e)
+        {
+            WebBrowserTask webbrowser = new WebBrowserTask();
+
+            var url = new Uri("http://developers.do/post/12739647995/developers-dominicanos-quienes-somos");
+
+            webbrowser.Uri = url;
+            webbrowser.Show();
         }
     }
 }

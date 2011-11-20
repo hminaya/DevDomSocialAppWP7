@@ -20,18 +20,18 @@
         <controls:Pivot x:Name="pantallas" Title="developers dominicanos">
 
             <controls:PivotItem Header="tutoriales">
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding categorias}" SelectionChanged="ListBox_SelectionChanged">
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding categorias}" SelectionChanged="Categoria_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" Orientation="Horizontal" >
                                 <Image Source="{Binding imageUrl}" Width="48" Height="48" HorizontalAlignment="Left"  />
-                                
+
                                 <StackPanel>
                                     <TextBlock Text="{Binding categoryName,Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" />
                                     <TextBlock Text="{Binding description, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" />
-                                    <TextBlock Text="{Binding tutorialCount, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"  />  
+                                    <TextBlock Text="{Binding tutorialCount, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"  />
                                 </StackPanel>
-                                
+
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -39,12 +39,12 @@
             </controls:PivotItem>
 
             <controls:PivotItem Header="podcasts">
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding podcasts}">
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding podcasts}" SelectionChanged="Podcast_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" >
                                 <TextBlock Text="{Binding name,Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="{Binding description, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                <TextBlock Text="{Binding descriptionShort, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -52,14 +52,12 @@
             </controls:PivotItem>
 
             <controls:PivotItem Header="comunidades">
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding comunidades}">
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding comunidades}" SelectionChanged="Comunidad_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" >
                                 <TextBlock Text="{Binding name,Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="{Binding description, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
-                                <TextBlock Text="{Binding twitter, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
-                                <TextBlock Text="{Binding url, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                <TextBlock Text="{Binding descriptionShort, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -67,7 +65,26 @@
             </controls:PivotItem>
 
             <controls:PivotItem Header="colaboradores">
-                <Grid/>
+                <ScrollViewer>
+                    <Grid>
+                        <StackPanel>
+
+                            <Image HorizontalAlignment="Center" Margin="12,15" Source="/DevDomMobile;component/images/devsdo_logo_trans_wtext.PNG" />
+
+                            <TextBlock Text="Estas son las personas que contribuyeron de su valioso tiempo para trabajar en esta aplicación" 
+                               TextWrapping="Wrap" Style="{StaticResource PhoneTextAccentStyle}" />
+
+                            <TextBlock Margin="12,20" Text="Hector Minaya - @HectorMinaya" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                        </StackPanel>
+                        <StackPanel VerticalAlignment="Bottom" Margin="0 12 12 0">
+                            <TextBlock Text="http://developers.do" HorizontalAlignment="Right" Tap="Colaboradores_Tap"  TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                            <TextBlock Text="versión 0.9.0" HorizontalAlignment="Right" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                        </StackPanel>
+                    </Grid>
+
+                </ScrollViewer>
             </controls:PivotItem>
 
         </controls:Pivot>

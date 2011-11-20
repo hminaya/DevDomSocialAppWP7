@@ -17,3 +17,24 @@ C:\Users\hminaya\Documents\Visual Studio 2010\Projects\DevDomMobile\DevDomMobile
 C:\Users\hminaya\Documents\Visual Studio 2010\Projects\DevDomMobile\DevDomMobile\obj\Debug\DevDomMobile.dll
 C:\Users\hminaya\Documents\Visual Studio 2010\Projects\DevDomMobile\DevDomMobile\obj\Debug\DevDomMobile.pdb
 C:\Users\hminaya\Documents\Visual Studio 2010\Projects\DevDomMobile\DevDomMobile\obj\Debug\XapCacheFile.xml
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\ApplicationIcon.png
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\Background.png
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\DevDomMobile.dll
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\DevDomMobile.pdb
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\AppManifest.xaml
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\DevDomMobile.xap
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\Newtonsoft.Json.dll
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\Newtonsoft.Json.pdb
+C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\Newtonsoft.Json.xml
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\DevDomMobile.csprojResolveAssemblyReference.cache
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\App.g.i.cs
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\comunidades.g.i.cs
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\MainPage.g.i.cs
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\podcasts.g.i.cs
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\tutoriales.g.i.cs
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\DevDomMobile.g.resources
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\DevDomMobile.dll
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\DevDomMobile.pdb
+C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\XapCacheFile.xml

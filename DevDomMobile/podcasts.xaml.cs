@@ -11,24 +11,23 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using DevDomMobile.Models;
 using Microsoft.Phone.Tasks;
 
-namespace DevDomMobile
+namespace DevDomMobile.Models
 {
-    public partial class tutoriales : PhoneApplicationPage
+    public partial class podcasts : PhoneApplicationPage
     {
-        public tutoriales()
+        public podcasts()
         {
             InitializeComponent();
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            var catId = Convert.ToInt32(NavigationContext.QueryString["catId"]);
+            var podId = Convert.ToInt32(NavigationContext.QueryString["podId"]);
 
             var respuesta = (respuesta)PhoneApplicationService.Current.State["respuesta"];
-            DataContext = respuesta.categorias.FirstOrDefault(x => x.id == catId);
+            DataContext = respuesta.podcasts.FirstOrDefault(x => x.id == podId);
 
             base.OnNavigatedTo(e);
         }
@@ -37,15 +36,14 @@ namespace DevDomMobile
         {
             var boton = (Button)sender;
 
-            var cat = (categoria)DataContext;
+            var pod = (podcast)DataContext;
 
             WebBrowserTask webbrowser = new WebBrowserTask();
 
-            var url = new Uri(cat.tutorials.FirstOrDefault(x => x.id == Convert.ToInt32(boton.CommandParameter)).tutorialUrl);
+            var url = new Uri(pod.url);
 
             webbrowser.Uri = url;
             webbrowser.Show();
         }
-
     }
 }

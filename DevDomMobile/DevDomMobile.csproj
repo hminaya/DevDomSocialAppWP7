@@ -67,6 +67,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="comunidades.xaml.cs">
+      <DependentUpon>comunidades.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -74,19 +77,31 @@
     <Compile Include="Models\comunidad.cs" />
     <Compile Include="Models\evento.cs" />
     <Compile Include="Models\podcast.cs" />
+    <Compile Include="podcasts.xaml.cs">
+      <DependentUpon>podcasts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\respuesta.cs" />
     <Compile Include="Models\tutorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tutoriales.xaml.cs">
       <DependentUpon>tutoriales.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="comunidades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="podcasts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +123,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="images\devsdo_logo.png" />
+    <Resource Include="images\devsdo_logo_trans_square.png" />
+    <Resource Include="images\devsdo_logo_trans_wtext.PNG" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

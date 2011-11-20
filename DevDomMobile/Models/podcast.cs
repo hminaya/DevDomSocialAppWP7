@@ -16,6 +16,13 @@ namespace DevDomMobile.Models
         public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
+        public string descriptionShort
+        {
+            get
+            {
+                return Util.RecortarDescripcion(description, 40);
+            }
+        }
         public string url { get; set; }
         public string twitter { get; set; }
         public string logo { get; set; }

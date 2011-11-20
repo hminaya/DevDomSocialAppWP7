@@ -1,14 +1,14 @@
-﻿<xapCache source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\DevDomMobile.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="11/20/2011 3:27:02 PM">
-  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="11/20/2011 4:19:51 AM" />
+﻿<xapCache source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Release\DevDomMobile.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="11/20/2011 3:32:40 PM">
+  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Release\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="11/20/2011 3:32:40 PM" />
   <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\images\devsdo_logo.png" archivePath="images\devsdo_logo.png" lastWriteTime="11/20/2011 4:19:33 AM" />
   <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\images\devsdo_logo.png" archivePath="images\devsdo_logo.png" lastWriteTime="11/20/2011 4:19:33 AM" />
-  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Debug\DevDomMobile.dll" archivePath="DevDomMobile.dll" lastWriteTime="11/20/2011 3:27:02 PM" />
+  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\obj\Release\DevDomMobile.dll" archivePath="DevDomMobile.dll" lastWriteTime="11/20/2011 3:32:39 PM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="9/15/2011 3:36:26 PM" />
   <file source="C:\@Proyectos\DevDomMobile\packages\Newtonsoft.Json.4.0.4\lib\sl3-wp\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="11/19/2011 10:55:34 PM" />
   <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="11/19/2011 9:24:08 PM" />
   <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Background.png" archivePath="Background.png" lastWriteTime="11/19/2011 9:24:08 PM" />
   <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="11/19/2011 9:24:08 PM" />
-  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="11/20/2011 3:27:02 PM" />
-  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="11/19/2011 9:24:08 PM" />
-  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="11/19/2011 9:24:08 PM" />
+  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="11/20/2011 3:32:40 PM" />
+  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Release\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="11/19/2011 9:24:08 PM" />
+  <file source="C:\@Proyectos\DevDomMobile\DevDomMobile\Bin\Release\Background.png" archivePath="Background.png" lastWriteTime="11/19/2011 9:24:08 PM" />
 </xapCache>

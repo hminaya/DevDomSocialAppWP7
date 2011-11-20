@@ -10,25 +10,25 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using DevDomMobile.Models;
+using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 
 namespace DevDomMobile
 {
-    public partial class tutoriales : PhoneApplicationPage
+    public partial class comunidades : PhoneApplicationPage
     {
-        public tutoriales()
+        public comunidades()
         {
             InitializeComponent();
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            var catId = Convert.ToInt32(NavigationContext.QueryString["catId"]);
+            var comId = Convert.ToInt32(NavigationContext.QueryString["comId"]);
 
             var respuesta = (respuesta)PhoneApplicationService.Current.State["respuesta"];
-            DataContext = respuesta.categorias.FirstOrDefault(x => x.id == catId);
+            DataContext = respuesta.comunidades.FirstOrDefault(x => x.id == comId);
 
             base.OnNavigatedTo(e);
         }
@@ -37,15 +37,14 @@ namespace DevDomMobile
         {
             var boton = (Button)sender;
 
-            var cat = (categoria)DataContext;
+            var com = (comunidad)DataContext;
 
             WebBrowserTask webbrowser = new WebBrowserTask();
 
-            var url = new Uri(cat.tutorials.FirstOrDefault(x => x.id == Convert.ToInt32(boton.CommandParameter)).tutorialUrl);
+            var url = new Uri(com.url);
 
             webbrowser.Uri = url;
             webbrowser.Show();
         }
-
     }
 }
