@@ -1,0 +1,78 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="DevDomMobile.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot x:Name="pantallas" Title="developers dominicanos">
+
+            <controls:PivotItem Header="tutoriales">
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding categorias}" SelectionChanged="ListBox_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,17" Orientation="Horizontal" >
+                                <Image Source="{Binding imageUrl}" Width="48" Height="48" HorizontalAlignment="Left"  />
+                                
+                                <StackPanel>
+                                    <TextBlock Text="{Binding categoryName,Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" />
+                                    <TextBlock Text="{Binding description, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" />
+                                    <TextBlock Text="{Binding tutorialCount, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"  />  
+                                </StackPanel>
+                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="podcasts">
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding podcasts}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,17" >
+                                <TextBlock Text="{Binding name,Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
+                                <TextBlock Text="{Binding description, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="comunidades">
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding comunidades}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,17" >
+                                <TextBlock Text="{Binding name,Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
+                                <TextBlock Text="{Binding description, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                <TextBlock Text="{Binding twitter, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                <TextBlock Text="{Binding url, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="colaboradores">
+                <Grid/>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+    </Grid>
+
+
+
+</phone:PhoneApplicationPage>
