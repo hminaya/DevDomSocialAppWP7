@@ -29,7 +29,11 @@
                                 <StackPanel>
                                     <TextBlock Text="{Binding categoryName,Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" />
                                     <TextBlock Text="{Binding description, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" />
-                                    <TextBlock Text="{Binding tutorialCount, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"  />
+                                    <!-- <TextBlock Text="{Binding tutorialCount, Mode=OneTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"  /> -->
+                                    <TextBlock TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"  >
+                                        <Run Text="{Binding tutorialCount, Mode=OneTime}" FontWeight="Bold" />
+                                        <Run Text="{Binding tutorialCountDesc, Mode=OneTime}" />
+                                    </TextBlock>
                                 </StackPanel>
 
                             </StackPanel>
@@ -79,7 +83,7 @@
                         </StackPanel>
                         <StackPanel VerticalAlignment="Bottom" Margin="0 12 12 0">
                             <TextBlock Text="http://developers.do" HorizontalAlignment="Right" Tap="Colaboradores_Tap"  TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
-                            <TextBlock Text="versión 0.9.0" HorizontalAlignment="Right" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+                            <TextBlock Text="versión 0.9.1" HorizontalAlignment="Right" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
 
                         </StackPanel>
                     </Grid>

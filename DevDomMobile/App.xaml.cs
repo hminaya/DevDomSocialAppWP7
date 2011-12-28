@@ -101,6 +101,9 @@ namespace DevDomMobile
                 // An unhandled exception has occurred; break into the debugger
                 System.Diagnostics.Debugger.Break();
             }
+
+            //MessageBox.Show(e.ToString());
+
         }
 
         #region Phone application initialization

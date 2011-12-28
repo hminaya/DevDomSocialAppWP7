@@ -15,52 +15,79 @@ using System.Runtime.Serialization.Json;
 using DevDomMobile.Models;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
+using System.Net.NetworkInformation;
 
 
 namespace DevDomMobile
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        public Uri uri;
+
         public MainPage()
         {
+
             InitializeComponent();
 
             this.DataContext = new respuesta();
 
-            Loaded += delegate
+
+            if (!isInternetAvailable())
+            {
+                MessageBox.Show("Usted no tiene acceso a Internet, favor verificar su conexion e intentar mas tarde...");
+                NavigationService.GoBack();
+            }
+            else
             {
 
-                var uri = new Uri("http://js.developers.do/js/devdom.js?h=" + DateTime.Now.TimeOfDay.ToString());
-                var request = (HttpWebRequest)WebRequest.Create(uri);
-                request.Method = "GET";
+                Loaded += delegate
+                {
+                    
+                    uri = new Uri("http://js.developers.do/js/devdom.js");
+                    
+                    var request = (HttpWebRequest)WebRequest.Create(uri);
+                    request.Method = "GET";
 
-                request.BeginGetResponse(HandleResponse, request);
+                    request.BeginGetResponse(HandleResponse, request);
 
-            };
+                };
+            }
 
+        }
+
+        public bool isInternetAvailable()
+        {
+            return NetworkInterface.GetIsNetworkAvailable();
         }
 
         void HandleResponse(IAsyncResult ar)
         {
-
-            WebResponse response = ((HttpWebRequest)ar.AsyncState).EndGetResponse(ar);
-
-
-            var serializer = new DataContractJsonSerializer(typeof(respuesta));
-
-            var resp = (respuesta)serializer.ReadObject(response.GetResponseStream());
-
-            Dispatcher.BeginInvoke(() =>
+            try
             {
-
-                this.DataContext = resp;
-                PhoneApplicationService.Current.State["respuesta"] = resp;
-
-            });
+                WebResponse response = ((HttpWebRequest)ar.AsyncState).EndGetResponse(ar);
 
 
+                var serializer = new DataContractJsonSerializer(typeof(respuesta));
 
+                var resp = (respuesta)serializer.ReadObject(response.GetResponseStream());
+
+                Dispatcher.BeginInvoke(() =>
+                {
+
+                    this.DataContext = resp;
+                    PhoneApplicationService.Current.State["respuesta"] = resp;
+
+                });
+            }
+            catch (Exception ex)
+            {
+                Dispatcher.BeginInvoke(() => {
+                    MessageBox.Show("Tuvimos problema accediendo al internet (" + uri + "), favor verificar.");
+                    NavigationService.GoBack();
+                });
+                
+            }
+            
         }
 
         private void Categoria_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -71,9 +98,9 @@ namespace DevDomMobile
 
             if (cat != null)
             {
-              NavigationService.Navigate(new Uri("/tutoriales.xaml?catId=" + cat.id, UriKind.Relative));  
+                NavigationService.Navigate(new Uri("/tutoriales.xaml?catId=" + cat.id, UriKind.Relative));
             }
-            
+
         }
 
         private void Podcast_SelectionChanged(object sender, SelectionChangedEventArgs e)

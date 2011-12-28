@@ -25,11 +25,35 @@ namespace DevDomMobile.Models
         public string imageUrl { get; set; }
         public ObservableCollection<tutorial> tutorials { get; set; }
 
-        public string tutorialCount
+        public int tutorialCount
         {
             get
             {
-                return this.tutorials.Count + " tutoriales disponibles";
+                return this.tutorials.Count;
+            }
+        }
+
+        public string tutorialCountDesc
+        {
+            get
+            {
+                if (this.tutorialCount == 1)
+                {
+                    return " tutorial disponible";
+                }
+                else
+                {
+                    return " tutoriales disponibles";
+                }
+
+            }
+        }
+
+        public string tutorialCountDescCompleto
+        {
+            get
+            {
+                return this.tutorials.Count + " " + this.tutorialCountDesc;
             }
         }
 
@@ -39,17 +63,20 @@ namespace DevDomMobile.Models
             {
                 try
                 {
-                    Random rnd = new Random(0);
-                    var i = rnd.Next(this.tutorials.Count);
+                    Random rnd = new Random();
+                    var i = rnd.Next(0, this.tutorials.Count);
+
+                    System.Diagnostics.Debug.WriteLine("i: " + i);
+                    System.Diagnostics.Debug.WriteLine("url: " + this.tutorials[i].imageUrl);
 
                     return this.tutorials[i].imageUrl;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    System.Diagnostics.Debug.WriteLine("ex: " + ex.ToString());
+                    //throw ex;
                     return "";
-                    
                 }
-
             }
         }
 
